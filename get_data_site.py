@@ -7,14 +7,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-def get_data_site():
+def get_data_site(VIN):
     # Устанавливаем драйвер и запускаем браузер
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
 
     try:
         # Открываем начальную страницу
-        driver.get('https://example.com')
+        driver.get('https://www.autodoc.ru/catalogs/original/list-nodes/nodes?vin=' + VIN)
 
         # Ожидаем, пока элемент с кнопкой станет видимым
         wait = WebDriverWait(driver, 10)
@@ -50,4 +50,4 @@ def get_data_site():
 
     return data
 
-get_data_site()
+get_data_site(VIN)
