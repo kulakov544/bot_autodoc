@@ -50,4 +50,3 @@ def get_data_site(VIN):
 
     return data
 
-get_data_site(VIN)
